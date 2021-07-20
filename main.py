@@ -108,16 +108,14 @@ class LinkedList:
 
 def test():
     ll = LinkedList()
-
-    ll.append(23)
-    print(ll)
-    ll.prepend(14)
-    print(ll)
-    ll.insert(19, 1)
+    for i in [47,56,54,55,69,35,98,57,12,50,48,84,94,99,39,91]:
+      ll.append(i)
     print(ll)
     ll.reverse()
     print(ll)
-
+    ll.reverse_at(4)
+    print(ll)
+    
 
 if __name__ == "__main__":
     test()
