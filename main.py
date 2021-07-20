@@ -115,7 +115,7 @@ def test():
     print(ll)
     ll.insert(19, 1)
     print(ll)
-    ll.delete(19)
+    ll.reverse()
     print(ll)
 
 
