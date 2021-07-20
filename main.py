@@ -54,6 +54,45 @@ class LinkedList:
                     pos.value, pos.next = pos.next.value, pos.next.next
                     return
             pos = pos.next
+    def reverse(self):
+        if self.head is None or self.head.next is None:
+            return
+        prev = None
+        curr = self.head
+
+        while curr:
+            follow = curr.next
+            curr.next = prev
+            prev = curr
+            curr = follow
+
+        self.head = prev
+
+    def reverse_at(self, k):
+        if self.head is None or self.head.next is None:
+            return
+
+        curr = self.head
+        tail = None
+        head = None
+        while curr:
+            current = curr
+            follow = None
+            prev = None
+            count = 0
+            while current and count < k:
+                follow = current.next
+                current.next = prev
+                prev = current
+                current = follow
+                count += 1
+            if tail:
+                tail.next = prev
+            if head is None:
+                head = prev
+                tail = curr
+                curr = follow
+        self.head = head
 
     def __str__(self):
         tmp_list = []
